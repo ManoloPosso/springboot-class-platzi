@@ -8,22 +8,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id_post", nullable = false, unique = true)
+    @Column(name="id_user", nullable = false, unique = true)
 
     private Long id;
 
     @Column(length = 50)
     private String name;
+    @Column(length = 50, nullable = false, unique = true)
 
-    @Column(length = 50)
     private String email;
-
+    @Column(name = "birth_date")
     private LocalDate birthday;
 
     @OneToMany(mappedBy="user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)

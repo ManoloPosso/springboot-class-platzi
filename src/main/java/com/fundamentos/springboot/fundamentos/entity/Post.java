@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Post {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//identity para que no se siga el contador de otros registros
     @Column(name="id_post", nullable = false, unique = true)
 
     private Long id;
